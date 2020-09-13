@@ -1,0 +1,10 @@
+# Docker Compose V2
+version: '2'
+
+services:
+  website:
+    build: .
+    ports:
+      - '4200:4200'
+    volumes:
+      - '.:/openweather'

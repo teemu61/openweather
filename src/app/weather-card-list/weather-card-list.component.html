@@ -1,0 +1,55 @@
+
+
+
+<mat-form-field>
+    <input matInput placeholder="Search city" id=input #input>
+</mat-form-field>
+
+<div *ngIf="loading == false">
+
+        <mat-card >
+    
+            <mat-card-header>
+                <mat-card-title>
+                    <p>Weather Forecast for {{ city }} <p>
+                </mat-card-title>
+            </mat-card-header>
+            
+            <mat-card-content>
+                <google-chart #line
+                    [title]="title"
+                    [type]="type"
+                    [data]="data"
+                    [options]="options"
+                    [width]="width"
+                    [height]="height">
+                </google-chart>
+            </mat-card-content>
+    
+        </mat-card>
+    
+        <div id="linechart_material" class="chart"></div>
+    
+        <mat-card class="icon" *ngFor="let item of list" class="weather-card">
+            
+            <mat-card-header>
+                <mat-card-title>
+                    <p>{{ item.dt_txt }}<p>
+                </mat-card-title>
+            </mat-card-header>
+    
+            <mat-card-content>
+    
+                <img mat-card-image width=100 height=100 alt="weather_icon" src='assets/svg/{{item.weather[0].icon}}.svg' />
+    
+                <p>City: {{ city }}</p>
+                <p>Max: {{ item.main.temp_max }}</p>
+                <p>Min: {{ item.main.temp_min }}</p>
+                <p>Humidity: {{ item.main.humidity }} </p>
+                <p>Wind: {{ item.wind.speed }}</p>
+                <p>Description: {{ item.weather[0].description}}</p>
+        
+            </mat-card-content>
+    
+        </mat-card>
+    </div>

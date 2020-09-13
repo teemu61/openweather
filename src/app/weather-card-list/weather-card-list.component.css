@@ -1,0 +1,29 @@
+.weather-card {
+    margin: 20px 10px;
+    text-align: center;
+}
+
+.weather-actions {
+    text-align: center;
+}
+
+.card-container {
+    /*  not needed styles to reflect it */ 
+    background: blue;
+    padding: 10px;
+    color: white;
+    width: 500px;
+    margin: 20px 10px;
+  
+    /* needed styles below */
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .content { 
+    padding: 16px; 
+  }
+
+  .content > mat-card { 
+    width: 200px; 
+  }  

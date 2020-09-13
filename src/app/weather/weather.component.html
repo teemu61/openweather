@@ -1,0 +1,29 @@
+<div class="summary">
+
+    <h2>Weather Today for {{ city }}</h2>
+
+    <mat-form-field>
+      <input matInput placeholder="Search city" #input>
+    </mat-form-field>
+
+
+    <div class="summary-table">
+      <mat-table [dataSource]="dataSource" matSort>
+    
+        <ng-container matColumnDef="key">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Key</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.key}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="value">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Value</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.value}} </mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    
+
+    </div>
+</div>
